@@ -1,0 +1,79 @@
+///////////////////////////////////////////////
+//
+// vars
+//
+///////////////////////////////////////////////
+
+// font basics
+$base-fontsize:			16px;
+$base-lineheight:		1.5;
+
+// fontstacks
+$default-font:	'PT Sans', Helvetica, Arial, sans-serif;
+$alt-font:		'Merriweather', Helvetica, Arial, sans-serif;
+$icon-font:     'Fontello';
+
+// standard sizing
+$base-spacing:		20px;
+$half-spacing:		$base-spacing/2;
+$double-spacing:	$base-spacing*2;
+
+// z-indexes
+$z-index: (
+    navbar:         900,
+    hero:  950,
+    header-shade:   1000,
+    header-nav:     1010 
+);
+
+$min-site-width:        320px;
+$max-site-width:		960px;
+$max-content-width: 	740px;
+$header-height-mobile:  70px;
+$header-height-desktop: 82px;
+
+// mediaquery breakpoints
+/*
+   these general breakpoints are in principle only to be used in the layout grid
+   the breakpoints are used 'mobile first'
+   !! components should have their own breakpoints defined by their unique design !!
+*/
+$breakpoints: (
+	"S":	576px,
+    "M":	768px,
+    "L":    900px,
+	"XL":	$max-site-width
+);
+
+/* =============================================================================
+   Grid config
+   ========================================================================== */
+$use-grid:			true;
+
+// grid cell naming
+/* 
+    will construct:
+        .[$gridname]
+        .[$gridname]__[cellsizename],
+        .[$gridname]__[$breakpoints name][cellsizename] 
+*/
+$gridname:			"m-grid";
+$gridcellname:		#{$gridname + "__"};
+
+// grid gutter size
+$grid-spacing:		$base-spacing;
+
+// cell offsets
+/* generates lots of extra classes, use only when needed */
+$grid-offsets:		false;
+
+// grid cell offset naming
+/* will construct:
+    .[$offsetname]__[cellsizename]
+    .[$offsetname]__[$breakpoints name][cellsizename] 
+*/
+$offsetname:		"m-offset__";
+
+// media query grid
+/* will only render for mq's defined in $breakpoints */
+$grid-responsive:	true;

@@ -1,0 +1,68 @@
+.a-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+        padding: 0;
+        margin: 0;
+    }
+
+	&--inline, &--inlinehor {
+		display: inline-flex;
+	}
+	
+	&--hor, &--inlinehor {
+		flex-direction: row;
+    }
+    
+    &--arrows {
+        margin-bottom: 16px;
+
+        > li {
+            position: relative;
+            padding-left: 17px;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 4px;
+                width: 8px;
+                height: 13px;
+                background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0.00800000037997961 0.010000000707805157 8 12.979000091552734"><path fill="#FFF" fill-rule="evenodd" d="M4.64 6.5L.01 11.259l1.683 1.73L8.008 6.5 6.324 4.77 1.694.01.008 1.741 4.64 6.5z"/></svg>') no-repeat left top;
+            }
+        }
+    }
+
+    @mixin checkedList($check-color) {
+        &--checked {
+            margin-bottom: 16px;
+            
+            > li {
+                position: relative;
+                padding-left: 2.2em;
+    
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: .22em;
+                    width: 1.27em;
+                    height: 1em;
+                    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 18"> <g fill="none" fill-rule="evenodd" stroke="#{$check-color}" stroke-linecap="square" stroke-width="5"> <path d="M3.5 9.5l4.66 4.66M8.5 14.5L19.085 3.915"/> </g></svg>') no-repeat left top;
+                }
+            }
+        }
+    }
+    
+    @include checkedList(#0FA550);
+
+    [class*="--blue"] &, [class*="--magenta"] & {
+        @include checkedList(#FFF);
+    }
+}

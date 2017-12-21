@@ -1,0 +1,56 @@
+/*
+	section styling only applies to top level page layout sections,
+	which should be limited to:
+
+	<header>
+		<section class="m-section">
+			[grids + cells + actual components]
+		</section>
+	</header>
+	<main>
+		<section class="m-section">
+			[grids + cells + actual components]
+		</section>
+	</main>
+	<footer>
+		<section class="m-section">
+			[grids + cells + actual components]
+		</section>
+	</footer>
+*/
+
+.m-section {	
+	position:relative; 
+	
+	&:empty {
+		min-height: 100px;
+	}
+
+	&--wide {
+		> .placeholder__container > .placeholder > .m-grid {
+			max-width: 100%;
+
+			> .m-grid__M12 {
+				padding: 0;
+			}
+		}
+	}
+
+	&--reverse-grid {
+		.m-grid {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&--bt {
+		border-top: 1px solid $color-text;
+
+		&-inv {
+			border-top: 1px solid #FFF;
+		}
+	}
+}
+
+/*
+.container-text = boxed width
+.container-fluid = fluid width */

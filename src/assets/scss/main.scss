@@ -1,0 +1,41 @@
+@charset "utf-8";
+@viewport {
+    zoom: 1.0;
+    width: device-width;
+}
+
+// Settings
+@import "settings/variables";
+@import "settings/colors";
+
+// Tools
+@import "tools/functions";
+@import "tools/mixins";
+
+// Vendor
+@import "~slick-carousel/slick/slick";
+
+// Base
+@import "base/normalize";
+@import "base/fonts";
+@import "base/elements";
+@import "base/typography";
+
+// Atoms
+// Fundamental buildingblocks
+@import "10_atoms/list";
+
+// Molecules
+@import "20_molecules/grid";
+@import "20_molecules/section";
+
+// Organisms
+@import "30_organisms/header";
+@import "30_organisms/nav";
+
+// Templates
+@import "40_templates/default";
+
+// Helpers
+@import "99_helpers/spacing";
+@import "99_helpers/themes";

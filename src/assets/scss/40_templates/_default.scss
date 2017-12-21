@@ -1,0 +1,25 @@
+.site-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    > .placeholder__container {
+        flex-shrink: 0;
+    }
+
+    main {
+        flex: 1 0 auto;
+
+        .m-section {
+            margin-bottom: 25px;
+
+            @include mq(M) {
+                margin-bottom: 55px;
+            }
+
+            &.h-mb-n {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
