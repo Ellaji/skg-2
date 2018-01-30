@@ -1,0 +1,70 @@
+.o-collapsible-list {
+    &__title {
+        position: relative;
+        margin: 0;
+        padding: $base-spacing;
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: 1px solid $color-tertiary;
+        cursor: pointer;
+
+        .a-icon {
+            display: block;
+            position: absolute;
+            right: $base-spacing;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+            width: 12px;
+            height: 7px;
+            transition: .2s transform ease-in-out;
+
+            .collapsed & {
+                transform: translateY(-50%);
+            }
+        }
+        
+        .h-theme-1 & {
+            border-color: darken($color-tertiary, 7%);
+        }
+    }
+
+    .a-list {
+        padding: $base-spacing;
+        font-size: 18px;
+        color: $color-primary;
+        border-bottom: 1px solid $color-tertiary;
+
+        .h-theme-1 & {
+            border-color: darken($color-tertiary, 7%);
+        }
+        
+        > li {
+            padding-bottom: 9px;
+        }
+    }
+
+    @include mq(L) {
+        &__title {
+            border: 0;
+            cursor: auto;
+
+            .a-icon {
+                display: none;
+            }
+        }
+
+        .a-list {
+            padding-top: 0;
+            border-bottom: 0;
+        }
+        
+        .rah-static, .rah-animating {
+            height: auto !important; /* Added important in order to overrule mobile collapse styling */
+            overflow: visible !important; 
+
+            > div {
+                display: block !important;
+            }
+        }
+    }
+}

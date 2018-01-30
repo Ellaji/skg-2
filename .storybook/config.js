@@ -5,6 +5,7 @@ import './storybook-style.css';
 
 function loadStories() {
   require('../stories/Breadcrumb');
+  require('../stories/FooterMenu');
 }
 
 configure(loadStories, module);

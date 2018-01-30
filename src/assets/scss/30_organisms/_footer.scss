@@ -1,0 +1,14 @@
+.flex-5-columns-responsive {
+    display: block;
+
+    .o-collapsible-list {
+
+    }
+
+    @include mq(L) {
+        display: flex;
+        -webkit-justify-content: space-between; /* Safari */
+        justify-content:         space-between;
+    }
+
+}
