@@ -13,13 +13,17 @@
             position: absolute;
             right: $base-spacing;
             top: 50%;
-            transform: translateY(-50%) rotate(180deg);
+            transform: rotate(180deg);
             width: 12px;
             height: 7px;
             transition: .2s transform ease-in-out;
 
+            svg {
+                display: block;
+            }
+
             .collapsed & {
-                transform: translateY(-50%);
+                transform: rotate(0deg);
             }
         }
         
