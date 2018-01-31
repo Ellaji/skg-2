@@ -10,7 +10,7 @@ export interface CollapsibleListState {
 export interface CollapsibleListProps {
     title: string;
     links: LinkProps[];
-    breakpoint?: string;
+    breakpoint?: string; // Use "S", "M", "L", or "XL"
 }
 
 class CollapsibleList extends React.Component<CollapsibleListProps, CollapsibleListState> {
