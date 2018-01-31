@@ -29,7 +29,8 @@ const themeLists = [
                 "url": "#",
                 "active": true,  
             }
-        ]
+        ],
+        "breakpoint": "L",
     },
     {   "title": "Innovation", 
         "links": [
@@ -49,7 +50,8 @@ const themeLists = [
                 "url": "#",
                 "active": true,  
             }
-        ]
+        ],
+        "breakpoint": "L",
     },
     {   "title": "Sustainability",
         "links": [
@@ -77,7 +79,8 @@ const themeLists = [
                 "url": "#",
                 "active": true,  
             }
-        ]
+        ],
+        "breakpoint": "L",
     },
     {   "title": "About us",
         "links": [
@@ -105,7 +108,8 @@ const themeLists = [
                 "url": "#",
                 "active": true,  
             }
-        ]
+        ],
+        "breakpoint": "L",
     },
     {   "title": "Investors",
         "links": [
@@ -133,7 +137,8 @@ const themeLists = [
                 "url": "#",
                 "active": true,  
             }
-        ]
+        ],
+        "breakpoint": "L",
     }
 ]
 

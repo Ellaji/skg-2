@@ -12,7 +12,7 @@ export const FooterMenu: React.SFC<FooterMenuProps> = ({ themes }) => {
             {themes.map((theme, index) => {
                     return (
                         <div key={index}>
-                            <CollapsibleList title={theme.title} links={theme.links}/>
+                            <CollapsibleList title={theme.title} links={theme.links} breakpoint={theme.breakpoint}/>
                         </div>
                     )
                 })}            

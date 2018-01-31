@@ -10,6 +10,7 @@ export interface CollapsibleListState {
 export interface CollapsibleListProps {
     title: string;
     links: LinkProps[];
+    breakpoint?: string;
 }
 
 class CollapsibleList extends React.Component<CollapsibleListProps, CollapsibleListState> {
@@ -30,11 +31,11 @@ class CollapsibleList extends React.Component<CollapsibleListProps, CollapsibleL
 
     render() {
         let isCollapsed = this.state.height === 0;
-        const asEditable = (value) => { return { __html: value }; }
+        const asEditable = (value) => { return { __html: value }; };
 
         return (
-            <div className={`o-collapsible-list ${isCollapsed ? 'collapsed' : ''}`}>
-                <h6 className="o-collapsible-list__title" onClick={this.toggleHeight.bind(this)} >
+            <div className={`m-collapsible-list ${isCollapsed ? 'collapsed' : ''} media-query-${ this.props.breakpoint }`}>
+                <h6 className="m-collapsible-list__title" onClick={this.toggleHeight.bind(this)} >
                     <span dangerouslySetInnerHTML={asEditable(this.props.title)}></span>
                 <Icon name="angle-down" />
             </h6>

@@ -1,4 +1,4 @@
-.o-collapsible-list {
+.m-collapsible-list {
     &__title {
         position: relative;
         margin: 0;
@@ -43,28 +43,39 @@
         }
     }
 
-    @include mq(L) {
-        &__title {
-            border: 0;
-            cursor: auto;
+    @mixin CollapseMQ($size) {
+        &.media-query-#{$size} {
+            @include mq($size) {
+            
+                .m-collapsible-list__title {
+                    border: 0;
+                    cursor: auto;
 
-            .a-icon {
-                display: none;
-            }
-        }
+                    .a-icon {
+                        display: none;
+                    }
+                }
 
-        .a-list {
-            padding-top: 0;
-            border-bottom: 0;
-        }
-        
-        .rah-static, .rah-animating {
-            height: auto !important; /* Added important in order to overrule mobile collapse styling */
-            overflow: visible !important; 
+                .a-list {
+                    padding-top: 0;
+                    border-bottom: 0;
+                }
+                
+                .rah-static, .rah-animating {
+                    height: auto !important; /* Added important in order to overrule mobile collapse styling */
+                    overflow: visible !important; 
 
-            > div {
-                display: block !important;
+                    > div {
+                        display: block !important;
+                    }
+                }
             }
         }
     }
+
+    @include CollapseMQ(S);
+    @include CollapseMQ(M);
+    @include CollapseMQ(L);
+    @include CollapseMQ(XL);
+
 }
