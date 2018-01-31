@@ -61,8 +61,9 @@
                     border-bottom: 0;
                 }
                 
+                /* Added importants in order to overrule inline styling from module AnimateHeight: */
                 .rah-static, .rah-animating {
-                    height: auto !important; /* Added important in order to overrule mobile collapse styling */
+                    height: auto !important; 
                     overflow: visible !important; 
 
                     > div {
