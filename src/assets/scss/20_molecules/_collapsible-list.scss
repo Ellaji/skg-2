@@ -3,9 +3,8 @@
         position: relative;
         margin: 0;
         padding: $base-spacing;
-        font-size: 20px;
         font-weight: bold;
-        border-bottom: 1px solid $color-tertiary;
+        border-bottom: 1px solid lighten($color-border-dark, 10%);
         cursor: pointer;
 
         .a-icon {
@@ -20,6 +19,7 @@
 
             svg {
                 display: block;
+                fill: $color-white;
             }
 
             .collapsed & {
@@ -34,12 +34,10 @@
 
     .a-list {
         padding: $base-spacing;
-        font-size: 18px;
-        color: $color-primary;
-        border-bottom: 1px solid $color-tertiary;
+        border-bottom: 1px solid $color-border-dark;
 
         .h-theme-1 & {
-            border-color: darken($color-tertiary, 7%);
+            border-color: darken($color-tertiary, 10%);
         }
         
         > li {

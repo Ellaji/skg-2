@@ -8,7 +8,7 @@ export interface FooterMenuProps {
 
 export const FooterMenu: React.SFC<FooterMenuProps> = ({ themes }) => {
     return (
-        <div className="flex-5-columns-responsive">
+        <div className="o-footer__menu flex-5-columns-responsive">
             {themes.map((theme, index) => {
                     return (
                         <div key={index}>

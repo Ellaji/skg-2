@@ -1,13 +1,27 @@
-.flex-5-columns-responsive {
-    display: block;
+.o-footer__menu {
 
-    @include mq(L) {
-        display: flex;
-        justify-content: space-between;
+    background-color: $color-darkbackground;
+    font-size: $small-fontsize;
+    color: $color-white; 
 
-        > div {
-            width: 18%;
+    .m-collapsible-list {
+
+        h6 {
+            text-transform: uppercase; 
+            font-size: $small-fontsize;
         }
     }
 
+    &.flex-5-columns-responsive {
+        display: block;
+
+        @include mq(L) {
+            display: flex;
+            justify-content: space-between;
+
+            > div {
+                width: 18%;
+            }
+        }
+    }
 }
