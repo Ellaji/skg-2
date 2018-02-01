@@ -1,6 +1,12 @@
 
 $color-white:			#fff;
-$color-black:			#000;
+$color-black:		    #000;
+
+$color-shade-one:       #e8e8e8; 
+$color-shade-two:       #d3d3d3; //HTML lightGrey
+$color-shade-three:     #C0C0C0; //HTML silver
+$color-shade-four:      #808080; //HTML grey
+$color-shade-five:      #696969; //HTML dimgrey
 
 // SKG colors
 
@@ -24,8 +30,9 @@ $color-text:            #333;
 // $color-info:            $color-lemon-grass;
 // $color-highlight:       $color-corn;
 // $color-light:           $color-celeste;
-$color-background:      #F9F9FB;
-$color-darkbackground:	#1A2328;
+$color-background:       #E9E7E8;
+$color-background-light: #F9F9FB;
+$color-background-dark:	 #1A2328;
 // $color-link:			    $color-deep-cerulean;
 // $color-blockquote:		$color-night-shadz;
 

@@ -1,0 +1,30 @@
+.m-searchbox {
+    display: inline-block;
+    background-color: $color-shade-one;
+    border-radius: 20px;
+    padding: 5px 20px;
+
+    input {
+        border: none;
+        background-color: transparent;
+
+        &::placeholder {
+            color: $color-shade-four;
+            font-weight: 100;
+        }
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .a-icon {
+        display: inline-block;
+        width: 16px;
+        height: auto;
+
+        path {
+            stroke: $color-brand;
+        }
+    }
+}

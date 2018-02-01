@@ -24,16 +24,19 @@
 // Atoms
 // Fundamental buildingblocks
 @import "10_atoms/list";
+@import "10_atoms/icon";
 
 // Molecules
 @import "20_molecules/collapsible-list";
 @import "20_molecules/grid";
+@import "20_molecules/searchbox";
 @import "20_molecules/section";
 
 // Organisms
 @import "30_organisms/footer";
 @import "30_organisms/header";
 @import "30_organisms/nav";
+@import "30_organisms/smartsearch";
 
 // Templates
 @import "40_templates/default";

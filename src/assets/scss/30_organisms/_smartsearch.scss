@@ -1,0 +1,12 @@
+.o-smartsearch {
+    padding: 20px;
+
+    .m-grid__M6:first-child {
+        border-right: 1px solid $color-shade-two;
+    }
+
+    &__searchbox {
+        padding-bottom: 50px;
+        border-bottom: 1px solid $color-shade-two;
+    }
+}
