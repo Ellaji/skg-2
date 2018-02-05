@@ -1,3 +1,4 @@
+export * from "./Grid/Row_6_Columns"
 export * from "./Main/MainLayout"
 export * from "./Main/MainSection"
 export * from "./Shared/Icon"
