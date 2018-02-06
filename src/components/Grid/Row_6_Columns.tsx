@@ -108,28 +108,28 @@ export const Row_6_Columns: React.SFC<Row_6_ColumnsProps> = ({ placeholders, chi
         c1Width = "";
     }
 
-return (
-    <div className="m-grid colored">
-        <div className={`${mQTo6}${c6Width1} ${mQTo3}${c3Width1} ${mQTo2}${c2Width1} ${mQTo1}${c1Width}`}>
-            <Placeholder children={children} placeholders={placeholders} placeholderIndex={0} />
+    return (
+        <div className="m-grid colored">
+            <div className={`${mQTo6}${c6Width1} ${mQTo3}${c3Width1} ${mQTo2}${c2Width1} ${mQTo1}${c1Width}`}>
+                <Placeholder children={children} placeholders={placeholders} placeholderIndex={0} />
+            </div>
+            <div className={`${mQTo6}${c6Width2} ${mQTo3}${c3Width2} ${mQTo2}${c2Width2} ${mQTo1}${c1Width}`}>
+                <Placeholder children={children} placeholders={placeholders} placeholderIndex={1} />
+            </div>
+            <div className={`${mQTo6}${c6Width3} ${mQTo3}${c3Width3} ${mQTo2}${c2Width1} ${mQTo1}${c1Width}`}>
+                <Placeholder children={children} placeholders={placeholders} placeholderIndex={2} />
+            </div>
+            <div className={`${mQTo6}${c6Width4} ${mQTo3}${c3Width1} ${mQTo2}${c2Width2} ${mQTo1}${c1Width}`}>
+                <Placeholder children={children} placeholders={placeholders} placeholderIndex={3} />
+            </div>
+            <div className={`${mQTo6}${c6Width5} ${mQTo3}${c3Width2} ${mQTo2}${c2Width1} ${mQTo1}${c1Width}`}>
+                <Placeholder children={children} placeholders={placeholders} placeholderIndex={4} />
+            </div>
+            <div className={`${mQTo6}${c6Width6} ${mQTo3}${c3Width3} ${mQTo2}${c2Width2} ${mQTo1}${c1Width}`}>
+                <Placeholder children={children} placeholders={placeholders} placeholderIndex={5} />
+            </div>
         </div>
-        <div className={`${mQTo6}${c6Width2} ${mQTo3}${c3Width2} ${mQTo2}${c2Width2} ${mQTo1}${c1Width}`}>
-            <Placeholder children={children} placeholders={placeholders} placeholderIndex={1} />
-        </div>
-        <div className={`${mQTo6}${c6Width3} ${mQTo3}${c3Width3} ${mQTo2}${c2Width1} ${mQTo1}${c1Width}`}>
-            <Placeholder children={children} placeholders={placeholders} placeholderIndex={2} />
-        </div>
-        <div className={`${mQTo6}${c6Width4} ${mQTo3}${c3Width1} ${mQTo2}${c2Width2} ${mQTo1}${c1Width}`}>
-            <Placeholder children={children} placeholders={placeholders} placeholderIndex={3} />
-        </div>
-        <div className={`${mQTo6}${c6Width5} ${mQTo3}${c3Width2} ${mQTo2}${c2Width1} ${mQTo1}${c1Width}`}>
-            <Placeholder children={children} placeholders={placeholders} placeholderIndex={4} />
-        </div>
-        <div className={`${mQTo6}${c6Width6} ${mQTo3}${c3Width3} ${mQTo2}${c2Width2} ${mQTo1}${c1Width}`}>
-            <Placeholder children={children} placeholders={placeholders} placeholderIndex={5} />
-        </div>
-    </div>
-);
+    );
 }
 
 export default Row_6_Columns;
