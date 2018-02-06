@@ -47,3 +47,8 @@ body {
     display: block;
     width: 30px;
 }
+
+.m-grid > div {
+      border: 2px solid white;
+      background: silver;
+}
