@@ -22,31 +22,30 @@ export const Row_6_Columns: React.SFC<Row_6_ColumnsProps> = ({ placeholders, chi
 
     let mQTo6;  
     if (mediaQuery !== "none") {
-        console.log("Gotcha!");
         mQTo6 = "m-grid__" + mediaQuery;
     } else { 
-        mQTo6 = "m-grid__"; //always 6 columns in a row
+        mQTo6 = "m-grid__"; //6 columns in a row under the lowest defined media query
     }
 
     let mQTo3;
     if (breakTo2x3Columns.mediaQuery !== "none") {
         mQTo3 = "m-grid__" + breakTo2x3Columns.mediaQuery;
     } else {
-        mQTo3 = ""; //does not break to 3 columns in a row
+        mQTo3 = ""; //does not break to 2 rows with 3 columns
     };
 
     let mQTo2;
     if (breakTo3x2Columns.mediaQuery !== "none") {
         mQTo2 = "m-grid__" + breakTo3x2Columns.mediaQuery;
     } else {
-        mQTo2 = ""; //does not break to 2 columns in a row
+        mQTo2 = ""; //does not break to 3 rows with 2 columns
     };
 
     let mQTo1;
     if (breakTo6x1Column.mediaQuery !== "none") {
         mQTo1 = "m-grid__" + breakTo6x1Column.mediaQuery;
     } else {
-        mQTo1 = ""; //does nog break to one column per row
+        mQTo1 = ""; //does not break to 6 rows with 1 column
     }
 
     let c6Width1;
@@ -57,13 +56,9 @@ export const Row_6_Columns: React.SFC<Row_6_ColumnsProps> = ({ placeholders, chi
     let c6Width6;
 
     let colWidths6Col;
+
     if (columnWidths == "equal") {
-        c6Width1 = 2;
-        c6Width2 = 2; 
-        c6Width3 = 2;
-        c6Width4 = 2;
-        c6Width5 = 2;
-        c6Width6 = 2; 
+        c6Width1 = c6Width2 = c6Width3 = c6Width4 = c6Width5 = c6Width6 = 2; 
     } else {
         colWidths6Col = columnWidths.split('-');
         c6Width1 = colWidths6Col[0];
@@ -74,34 +69,34 @@ export const Row_6_Columns: React.SFC<Row_6_ColumnsProps> = ({ placeholders, chi
         c6Width6 = colWidths6Col[5];
     }
 
-    const colWidths3Col = breakTo2x3Columns.columnWidths.split('-');
     let c3Width1;
     let c3Width2;
     let c3Width3;
+
+    let colWidths3Col;
+
     if (breakTo2x3Columns.mediaQuery === "none") {
-        c3Width1 = "";
-        c3Width2 = "";
-        c3Width3 = "";
+        c3Width1 = c3Width2 = c3Width3 = "";
     } else if (breakTo2x3Columns.columnWidths == "equal") {
-        c3Width1 = 4;
-        c3Width2 = 4;
-        c3Width3 = 4;
+        c3Width1 = c3Width2 = c3Width3 = 4;
     } else {
+        colWidths3Col = breakTo2x3Columns.columnWidths.split('-');
         c3Width1 = colWidths3Col[0];
         c3Width2 = colWidths3Col[1];
         c3Width3 = colWidths3Col[2];
     }
 
-    const colWidths2Col = breakTo3x2Columns.columnWidths.split('-');
     let c2Width1;
     let c2Width2;
+
+    let colWidths2Col;
+
     if (breakTo3x2Columns.mediaQuery === "none") {
-        c2Width1 = "";
-        c2Width2 = "";
+        c2Width1 = c2Width2 = "";
     } else if  (breakTo3x2Columns.columnWidths == "equal") {
-        c2Width1 = 6;
-        c2Width2 = 6;
+        c2Width1 = c2Width2 = 6;
     } else {
+        colWidths2Col = breakTo3x2Columns.columnWidths.split('-');
         c2Width1 = colWidths2Col[0];
         c2Width2 = colWidths2Col[1];
     }
