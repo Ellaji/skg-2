@@ -18,40 +18,35 @@ interface Row_6_ColumnsProps {
     };
 }
 
-export const Row_6_Columns: React.SFC<Row_6_ColumnsProps> = ({ placeholders, children, columnWidths, breakTo2x3Columns, breakTo3x2Columns, breakTo6x1Column }) => {
+export const Row_6_Columns: React.SFC<Row_6_ColumnsProps> = ({ placeholders, children, columnWidths, mediaQuery, breakTo2x3Columns, breakTo3x2Columns, breakTo6x1Column }) => {
 
     let mQTo6;  
-    if (breakTo2x3Columns.mediaQuery !== "none") {
-        mQTo6 = "m-grid__" + breakTo2x3Columns.mediaQuery;
-    } else if ((breakTo2x3Columns.mediaQuery === "none") && (breakTo3x2Columns.mediaQuery !== "none")) { 
-        mQTo6 = "m-grid__" + breakTo3x2Columns.mediaQuery;
-    } else if ((breakTo2x3Columns.mediaQuery === "none") && (breakTo3x2Columns.mediaQuery === "none") && (breakTo6x1Column.mediaQuery !== "none")) {
-        mQTo6 = "m-grid__" + breakTo6x1Column.mediaQuery;
-    } else if ((breakTo2x3Columns.mediaQuery === "none") && (breakTo3x2Columns.mediaQuery === "none") && (breakTo6x1Column.mediaQuery === "none")) {
-        mQTo6 = ""; //always 6 columns in a row
-    } else { console.log("Unexpected property in Row_6_Columns component mQTo6.")};
+    if (mediaQuery !== "none") {
+        console.log("Gotcha!");
+        mQTo6 = "m-grid__" + mediaQuery;
+    } else { 
+        mQTo6 = "m-grid__"; //always 6 columns in a row
+    }
 
     let mQTo3;
-    if ((breakTo2x3Columns.mediaQuery !== "none") && (breakTo3x2Columns.mediaQuery !== "none")) {
-        mQTo3 = "m-grid__" + breakTo3x2Columns.mediaQuery;
-    } else if ((breakTo2x3Columns.mediaQuery !== "none") && (breakTo3x2Columns.mediaQuery === "none") && (breakTo6x1Column.mediaQuery !== "none")) {
-        mQTo3 = "m-grid__" + breakTo6x1Column.mediaQuery;
-    } else if (breakTo2x3Columns.mediaQuery !== "none") {
-        mQTo3 = ""; //does not break to less than 3 columns in a row
-    } else { console.log("Unexpected property in Row_6_Columns component mQTo3.")};
+    if (breakTo2x3Columns.mediaQuery !== "none") {
+        mQTo3 = "m-grid__" + breakTo2x3Columns.mediaQuery;
+    } else {
+        mQTo3 = ""; //does not break to 3 columns in a row
+    };
 
     let mQTo2;
-    if ((breakTo3x2Columns.mediaQuery !== "none") && (breakTo6x1Column.mediaQuery !== "none")) {
-        mQTo2 = breakTo6x1Column.mediaQuery;
-    } else if ((breakTo2x3Columns.mediaQuery !== "none") && (breakTo6x1Column.mediaQuery === "none")) {
-        mQTo2 = ""; //does not break to less than 2 columns in a row  
-    } else { console.log("Unexpected property in Row_6_Columns component mQTo2.")};
+    if (breakTo3x2Columns.mediaQuery !== "none") {
+        mQTo2 = "m-grid__" + breakTo3x2Columns.mediaQuery;
+    } else {
+        mQTo2 = ""; //does not break to 2 columns in a row
+    };
 
     let mQTo1;
     if (breakTo6x1Column.mediaQuery !== "none") {
         mQTo1 = "m-grid__" + breakTo6x1Column.mediaQuery;
     } else {
-        mQTo1 = "";
+        mQTo1 = ""; //does nog break to one column per row
     }
 
     let c6Width1;
