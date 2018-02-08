@@ -2,6 +2,8 @@ import * as React from 'react';
 import { PlaceholderProps, Placeholder } from '../Placeholder';
 import { Fragment } from 'react';
 
+//GEEFT NOG BUGS ALS JE Break to 4 columns on screensize een MQ geeft terwijl 6 columns ook gegevens heeft. 
+
 interface GridBuilderProps {
     placeholders?: any;
     columnsInRowOnLargestScreen: string; // can only be 1, 2, 3, 4 or 6
@@ -29,48 +31,52 @@ interface GridBuilderProps {
 export const GridBuilder: React.SFC<GridBuilderProps> = ({ placeholders, children, columnsInRowOnLargestScreen, breakTo6Columns, breakTo4Columns, breakTo3Columns, breakTo2Columns, breakTo1Column }) => {
 
     let mQTo6;  
-    if (breakTo6Columns.mediaQuery !== "none") {
-        mQTo6 = "m-grid__" + breakTo6Columns.mediaQuery;
-    } else if (columnsInRowOnLargestScreen == "6") {
+    if ( (columnsInRowOnLargestScreen == "6") && (breakTo6Columns.mediaQuery === "none") ) {
         mQTo6 = "m-grid__"; //6 columns in a row under the lowest defined media query
+    } else if (columnsInRowOnLargestScreen == "4") {
+        mQTo6 = ""; //do not render a class for 6 columns
+    } else if (breakTo6Columns.mediaQuery !== "none") {
+        mQTo6 = "m-grid__" + breakTo6Columns.mediaQuery;
     } else { 
-        mQTo6 = ""; //does not break to 6 columns
+        mQTo6 = ""; //do not render a class for 6 columns
     }
 
-    let mQTo4;  
-    if (breakTo4Columns.mediaQuery !== "none") {
-        mQTo4 = "m-grid__" + breakTo4Columns.mediaQuery;
-    } else if (columnsInRowOnLargestScreen == "4") {
+    let mQTo4;
+    if ( (columnsInRowOnLargestScreen == "4") && (breakTo4Columns.mediaQuery === "none") ) {
         mQTo4 = "m-grid__"; //4 columns in a row under the lowest defined media query
     } else if (columnsInRowOnLargestScreen == "6") {
-        mQTo4 = ""; //do not render a class for 4 columns if columnsInRowOnLargestScreen = 6 
+        mQTo4 = ""; //do not render a class for 4 columns if columnsInRowOnLargestScreen = 6  
+    } else if (breakTo4Columns.mediaQuery !== "none") {
+        mQTo4 = "m-grid__" + breakTo4Columns.mediaQuery; 
     } else { 
         mQTo4 = ""; //does not break to 4 columns
     }
 
     let mQTo3;
-    if (breakTo3Columns.mediaQuery !== "none") {
-        mQTo3 = "m-grid__" + breakTo3Columns.mediaQuery;
-    } else if (columnsInRowOnLargestScreen == "3") {
+    if ( (columnsInRowOnLargestScreen == "3") && (breakTo4Columns.mediaQuery === "none") ) {
         mQTo3 = "m-grid__"; //3 columns in a row under the lowest defined media query
+    } else if (breakTo3Columns.mediaQuery !== "none") {
+        mQTo3 = "m-grid__" + breakTo3Columns.mediaQuery; 
     } else {
         mQTo3 = ""; //does not break to 3 columns
     };
 
     let mQTo2;
-    if (breakTo2Columns.mediaQuery !== "none") {
-        mQTo2 = "m-grid__" + breakTo2Columns.mediaQuery;
-    } else if (columnsInRowOnLargestScreen == "2") {
+    if (columnsInRowOnLargestScreen == "3") {
+        mQTo2 = ""; //
+    } else if ( (columnsInRowOnLargestScreen == "2") && (breakTo2Columns.mediaQuery === "none") ) {
         mQTo2 = "m-grid__"; //2 columns in a row under the lowest defined media query
+    } else if (breakTo2Columns.mediaQuery !== "none") {
+        mQTo2 = "m-grid__" + breakTo2Columns.mediaQuery;
     } else {
         mQTo2 = ""; //does not break to 2 columns
     };
 
     let mQTo1;
-    if (breakTo1Column.mediaQuery !== "none") {
-        mQTo1 = "m-grid__" + breakTo1Column.mediaQuery;
-    } else if (columnsInRowOnLargestScreen == "1") {
+    if ( (columnsInRowOnLargestScreen == "1") && (breakTo1Column.mediaQuery === "none") ) {
         mQTo1 = "m-grid__"; //1 column in a row under the lowest defined media query
+    } else if (breakTo1Column.mediaQuery !== "none") {
+        mQTo1 = "m-grid__" + breakTo1Column.mediaQuery;
     } else {
         mQTo1 = ""; //does not break to 1 column
     }
@@ -84,7 +90,9 @@ export const GridBuilder: React.SFC<GridBuilderProps> = ({ placeholders, childre
 
     let colWidths6Col;
 
-    if (breakTo6Columns.columnWidths == "equal") {
+    if (columnsInRowOnLargestScreen !== "6") { 
+        c6Width1 = c6Width2 = c6Width3 = c6Width4 = c6Width5 = c6Width6 = "";         
+    } else if (breakTo6Columns.columnWidths == "equal") {
         c6Width1 = c6Width2 = c6Width3 = c6Width4 = c6Width5 = c6Width6 = 2; 
     } else {
         colWidths6Col = breakTo6Columns.columnWidths.split('-');
@@ -106,7 +114,7 @@ export const GridBuilder: React.SFC<GridBuilderProps> = ({ placeholders, childre
     if (breakTo4Columns.mediaQuery === "none") {
         c4Width1 = c4Width2 = c4Width3 = "";
     } else if (breakTo3Columns.columnWidths == "equal") {
-        c4Width1 = c4Width2 = c4Width3 = "4";
+        c4Width1 = c4Width2 = c4Width3 = c4Width4 = "3";
     } else {
         colWidths4Col = breakTo3Columns.columnWidths.split('-');
         c4Width1 = colWidths4Col[0];
