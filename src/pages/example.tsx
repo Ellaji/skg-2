@@ -30,7 +30,7 @@ const themeLists = [
                 "active": true,  
             }
         ],
-        "breakpoint": "L",
+        "breakpoint": "XL",
     },
     {   "title": "Innovation", 
         "links": [
@@ -51,7 +51,7 @@ const themeLists = [
                 "active": true,  
             }
         ],
-        "breakpoint": "L",
+        "breakpoint": "XL",
     },
     {   "title": "Sustainability",
         "links": [
@@ -80,7 +80,7 @@ const themeLists = [
                 "active": true,  
             }
         ],
-        "breakpoint": "L",
+        "breakpoint": "XL",
     },
     {   "title": "About us",
         "links": [
@@ -109,7 +109,7 @@ const themeLists = [
                 "active": true,  
             }
         ],
-        "breakpoint": "L",
+        "breakpoint": "XL",
     },
     {   "title": "Investors",
         "links": [
@@ -138,18 +138,19 @@ const themeLists = [
                 "active": true,  
             }
         ],
-        "breakpoint": "L",
+        "breakpoint": "XL",
     }
 ]
 
 const ExamplePage = () => (
-    <div>
-        <MainSection renderingWidth="m-section--wide" renderingMarginBottom="0">
-        </MainSection>
-
-        <MainSection>
-            <FooterMenu themes={themeLists} />
-        </MainSection>
+    <div className="example">
+        <div className="sitewrapper">
+            <div className="example__main">
+            </div>
+            <div className="example__footer">
+                <FooterMenu themes={themeLists} />
+            </div>
+        </div>
     </div>
 )
 

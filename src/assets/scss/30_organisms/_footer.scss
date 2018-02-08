@@ -1,3 +1,31 @@
+.example { //TEMPORARY
+    background-color: white;
+    
+    .sitewrapper { 
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        height: 100vh;
+        background-color: $color-shade-one;
+    }
+
+    &__main {
+        display: block;
+    }
+
+    &__footer {
+        display: block;
+        align-self: flex-end;
+        width: 100%;
+        padding: 20px 50px;
+        background-color: $color-background-dark;
+
+        @media only screen and (min-width: 1024px) {
+            padding: 20px 100px;
+        }
+    }
+}
+
 .o-footer__menu {
 
     background-color: $color-background-dark;
@@ -15,7 +43,7 @@
     &.flex-5-columns-responsive {
         display: block;
 
-        @include mq(L) {
+        @include mq(XL) {
             display: flex;
             justify-content: space-between;
 

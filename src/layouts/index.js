@@ -59,7 +59,7 @@ const TemplateWrapper = ({ children }) => (
 
     <MainLayout>
       <RenderReactPlaceholder>
-        <PageHeader navigation={headerNavigation} />
+        {/* <PageHeader navigation={headerNavigation} /> TEMPORARY*/}
       </RenderReactPlaceholder>
       
       <RenderReactPlaceholder>
