@@ -63,6 +63,10 @@ export const GridBuilder: React.SFC<GridBuilderProps> = ({ placeholders, childre
         mQTo2 = "m-grid__" + breakTo2Columns.mediaQuery;
     };
 
+    /*If you want i.e. 6 columns in a row to break immediately to 2 columns in a row, you give breakTo3Columns.mediaQuery the same 
+    mediaQuery as breakTo2Columns.mediaQuery. With two breaks on the same mediaQuery the lowest number of columns in a row prevails,
+    because that class comes last in the HTML. */
+
     let c6Width1;
     let c6Width2;
     let c6Width3;
@@ -135,7 +139,7 @@ export const GridBuilder: React.SFC<GridBuilderProps> = ({ placeholders, childre
         colWidths2Col = breakTo2Columns.columnWidths.split('-');
         c2Width1 = colWidths2Col[0];
         c2Width2 = colWidths2Col[1];
-    };
+    }
 
     let oneColumn;
 
