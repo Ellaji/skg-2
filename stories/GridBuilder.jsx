@@ -11,7 +11,7 @@ const maxColumns = [
   "1"
 ];
 
-const maxColumnsDefault = 6;
+const maxColumnsDefault = "6";
 
 const col6Widths = [
     "equal",
@@ -57,10 +57,9 @@ const mediaQueries = [
 ];
 
 const mQTo6Default = "XL";
-const mQTo4Default = "XL";
-const mQTo3Default = "L";
-const mQTo2Default = "M";
-const mQTo1Default = "S";
+const mQTo4Default = "L";
+const mQTo3Default = "M";
+const mQTo2Default = "S";
 
 storiesOf('GridBuilder', module)
 .addDecorator(withKnobs)
@@ -71,5 +70,5 @@ storiesOf('GridBuilder', module)
       breakTo4Columns = {{ mediaQuery: select('Break to 4 columns on screensize:', mediaQueries, mQTo4Default), columnWidths: select('Widths of the 4 columns:', col4Widths, defaultCol4Width) }} 
       breakTo3Columns = {{ mediaQuery: select('Break to 3 columns on screensize:', mediaQueries, mQTo3Default), columnWidths: select('Widths of the 3 columns:', col3Widths, defaultCol3Width) }} 
       breakTo2Columns = {{ mediaQuery: select('Break to 2 columns on screensize:', mediaQueries, mQTo2Default), columnWidths: select('Widths of the 2 columns:', col2Widths, defaultCol2Width) }}  
-      breakTo1Column = {{ mediaQuery: select('Break to 1 column on screensize:', mediaQueries, mQTo1Default) }}  />
+    />
   ));
